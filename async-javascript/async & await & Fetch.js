@@ -31,20 +31,17 @@ function createPost(post) {
 
 }
 
-createPost({title: 'Post Three', body: 'This is post three' })
-    .then(getPosts)
-    .catch(err => console.log(err));
+// Async / Await / Fetch
+async function fetchUsers() {
+    const  res = await fetch
+    ('https://jsonplaceholder.typicode.com/users');
 
+    const data = await res.json();
 
-// Promises
-const promise1 = Promise.resolve('Hello World');
-const promise2 = 10;
-const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Good Bye') );
-const promise4 = fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json());
+    console.log(data);
 
-Promise.all([promise1, promise2, promise3, promise4]).then(values =>
-    console.log(values)
-);
+}
 
+fetchUsers();
 
+//Inspect Chrome Console for response and results.
