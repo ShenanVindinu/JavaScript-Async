@@ -20,6 +20,4 @@ function createPost(post, callback) {
     }, 2000);
 }
 
-getPosts();
-
 createPost({title: 'Post Three', body: 'This is post three' }, getPosts);
